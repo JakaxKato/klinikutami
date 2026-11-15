@@ -1,0 +1,22 @@
+{
+  "name": "klinikutamasami",
+  "version": "1.0.0",
+  "description": "Website Klinik Utama SAMI, Sukabumi",
+  "scripts": {
+    "build": "tailwindcss -i ./styles.css -o ./assets/site.css --minify",
+    "dev": "node scripts/serve.cjs",
+    "format": "prettier --write index.html styles.css scripts/site.js tailwind.config.cjs",
+    "test": "playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "linkedom": "^0.18.15",
+    "prettier": "^3.10.1",
+    "tailwindcss": "^3.4.19"
+  },
+  "private": true
+}
