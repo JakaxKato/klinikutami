@@ -20,16 +20,18 @@ Buka alamat yang tercetak setelah `SAMI preview:` (biasanya `http://127.0.0.1:41
 - `scripts/site.js`: menu mobile dan pemuatan peta atas permintaan.
 - `assets/site.css`: hasil build CSS yang dipakai langsung oleh halaman; tidak membutuhkan Tailwind CDN saat dibuka.
 - `assets/images/`: foto dan brosur yang disimpan lokal dari ekspor.
-- `assets/images/logo-sami.png`: logo resmi yang diberikan pengguna; dipakai di header, footer, dan favicon.
+- `assets/images/logo-sami.png`: logo resmi asli dari pengguna; digunakan sebagai favicon.
+- `assets/images/logo-sami.webp` dan `assets/images/hero-perawatan.webp`: versi ringan untuk tampilan halaman.
+- `assets/fonts/`: tiga font WOFF2 lokal untuk teks editorial, teks utama, dan 29 ikon yang digunakan. Asal file tercatat di `sources.json`; lisensinya ada di `licenses/fonts/`.
 - `assets/sources.json`: asal URL gambar, untuk jejak sumber.
 - `reference/stitch-export.html`: ekspor asli sebelum perubahan, disimpan sebagai cadangan dan tidak disajikan server preview.
 - `design.md`: brief yang diperbarui berdasarkan konfirmasi pengguna.
 - `vercel.json`: perintah build dan direktori hasil deploy untuk Vercel.
 - `scripts/prepare-vercel.cjs`: menyalin hanya halaman dan aset yang diperlukan ke `dist/`.
 
-FAQ dan profil dokter menggunakan elemen HTML `details`, sehingga tetap bisa dibuka tanpa JavaScript. Jadwal mingguan dikelompokkan menurut hari; konfirmasi slot tetap melalui WhatsApp. Google Maps dimuat setelah tombol “Tampilkan peta” ditekan, dengan tautan lokasi eksternal tetap tersedia. Peta dan Google Fonts memerlukan jaringan.
+FAQ dan profil dokter menggunakan elemen HTML `details`, sehingga tetap bisa dibuka tanpa JavaScript. Jadwal mingguan dikelompokkan menurut hari; konfirmasi slot tetap melalui WhatsApp. Google Maps dimuat setelah tombol “Tampilkan peta” ditekan, dengan tautan lokasi eksternal tetap tersedia. Peta memerlukan jaringan; font halaman disajikan dari aset lokal.
 
-Font Material Symbols di `index.html` dibatasi melalui `icon_names` agar browser hanya mengunduh 29 ikon yang digunakan. Bila menambah ikon baru, tambahkan nama ikonnya ke parameter tersebut dalam urutan alfabetis.
+Font Material Symbols dibatasi pada 29 ikon yang digunakan. Bila menambah ikon baru, buat ulang subset font di `assets/fonts/` agar ligatur ikon baru tersedia.
 
 ## Verifikasi
 
@@ -78,4 +80,4 @@ Logo resmi dari pengguna kini ditampilkan di header, footer, dan favicon. Instag
 - Mengganti gambar peta dengan akses Google Maps, memperbaiki alt text, fokus keyboard, disclosure FAQ/profil, dan target navigasi.
 - Memindahkan CSS serta interaksi ke file terpisah dan menyimpan aset lokal. Halaman tidak lagi memuat formulir duplikat yang meminta data pasien.
 
-Website masih berupa proyek lokal dan belum dipublikasikan.
+Website telah dipublikasikan pengguna di [klinikutami.vercel.app](https://klinikutami.vercel.app/). Perubahan lokal berikutnya perlu di-push agar Vercel menerbitkannya.
