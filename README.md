@@ -29,6 +29,8 @@ Buka alamat yang tercetak setelah `SAMI preview:` (biasanya `http://127.0.0.1:41
 
 FAQ dan profil dokter menggunakan elemen HTML `details`, sehingga tetap bisa dibuka tanpa JavaScript. Jadwal mingguan dikelompokkan menurut hari; konfirmasi slot tetap melalui WhatsApp. Google Maps dimuat setelah tombol “Tampilkan peta” ditekan, dengan tautan lokasi eksternal tetap tersedia. Peta dan Google Fonts memerlukan jaringan.
 
+Font Material Symbols di `index.html` dibatasi melalui `icon_names` agar browser hanya mengunduh 29 ikon yang digunakan. Bila menambah ikon baru, tambahkan nama ikonnya ke parameter tersebut dalam urutan alfabetis.
+
 ## Verifikasi
 
 ```sh
