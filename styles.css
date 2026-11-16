@@ -1,3 +1,25 @@
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url("./fonts/plus-jakarta-sans-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: Newsreader;
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/newsreader-italic-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Material Symbols Outlined";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("./fonts/material-symbols-sami.woff2") format("woff2");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -62,7 +84,18 @@ section {
   scroll-margin-top: 112px;
 }
 .material-symbols-outlined {
+  display: inline-block;
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
   font-size: 1.35rem;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
   flex-shrink: 0;
 }
 .skip-link {
@@ -394,7 +427,7 @@ section {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #0875d1;
+  color: #075ea8;
   margin-bottom: 18px;
 }
 .schedule-heading h2 {
@@ -1124,7 +1157,7 @@ section {
   background: #0875d1;
 }
 .schedule-day-head > span {
-  color: #6d7b88;
+  color: #4c5c70;
   font-family: Newsreader, Georgia, serif;
   font-style: italic;
   font-size: 12px;

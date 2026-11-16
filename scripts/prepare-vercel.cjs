@@ -17,6 +17,15 @@ fs.copyFileSync(path.join(root, 'assets', 'site.css'), path.join(output, 'assets
 fs.cpSync(path.join(root, 'assets', 'images'), path.join(output, 'assets', 'images'), {
   recursive: true,
 });
+fs.mkdirSync(path.join(output, 'assets', 'fonts'), { recursive: true });
+for (const name of fs.readdirSync(path.join(root, 'assets', 'fonts'))) {
+  if (name.endsWith('.woff2')) {
+    fs.copyFileSync(
+      path.join(root, 'assets', 'fonts', name),
+      path.join(output, 'assets', 'fonts', name),
+    );
+  }
+}
 fs.copyFileSync(path.join(root, 'scripts', 'site.js'), path.join(output, 'scripts', 'site.js'));
 
 console.log('Berkas siap untuk Vercel di dist/');
