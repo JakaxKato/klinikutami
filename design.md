@@ -28,6 +28,8 @@ Prioritaskan kejelasan, rasa percaya, dan kemudahan penggunaan di ponsel. Hindar
 - **Pendukung:** Klik petunjuk arah Google Maps, melihat profil dokter, dan membaca informasi layanan.
 - **Pengukuran setelah rilis:** Jumlah klik WhatsApp, klik petunjuk arah, dan halaman layanan/dokter yang paling sering dibuka. Angka tersebut mengukur interaksi website, bukan jumlah pasien yang benar-benar datang.
 
+**Penempatan CTA:** Tampilkan tombol WhatsApp utama pada header, hero, bagian jadwal, dan penutup halaman. Nomor WhatsApp tetap dapat ditautkan sebagai teks pada FAQ, kontak, dan footer. Tidak ada tombol reservasi pada setiap kartu layanan, kartu dokter, atau baris jadwal.
+
 ## 2. Fakta yang tersedia dan hal yang belum pasti
 
 | Informasi | Status | Perlakuan dalam desain |
@@ -38,7 +40,7 @@ Prioritaskan kejelasan, rasa percaya, dan kemudahan penggunaan di ponsel. Hindar
 | Kontak: 0812-9346-1648 | Tersedia dari Maps dan profil Instagram pada materi pengguna | Gunakan untuk CTA WhatsApp; konfirmasi bahwa nomor menerima reservasi. |
 | Empat dokter: drg. Lily Mustapa, Sp.KG; drg. Sammy; drg. Nenden Handayani; drg. Astriani Amanda, Sp.KG | Dikonfirmasi pengguna saat audit kode | Tiga kartu portrait dan satu profil dokter mitra. Foto latar belakang pendidikan belum tersedia sebagai aset terpisah. |
 | Foto perawatan gigi | Dinyatakan pengguna | Gunakan sebagai gambar utama layanan, galeri, dan kemungkinan hero. |
-| Jadwal praktik tiap dokter | Data ekspor dikonfirmasi pengguna | Pertahankan sebelas entri, gunakan satu sumber HTML dengan filter dokter dan hari; ketersediaan slot tetap dikonfirmasi admin. |
+| Jadwal praktik tiap dokter | Data ekspor dikonfirmasi pengguna | Pertahankan sebelas entri dalam enam kelompok hari dan tampilkan brosur; ketersediaan slot tetap dikonfirmasi admin. |
 | Ulasan Google dan rating | Tangkapan Maps memperlihatkan 4,9 dari 74 ulasan pada saat diambil | Tautkan ke ulasan Google. Jangan menjadikan angka ini teks permanen tanpa mekanisme pembaruan. |
 | Harga, asuransi/BPJS, akreditasi, jaminan hasil perawatan | Belum diberikan | Jangan menambahkan klaim. |
 | Foto dan dua testimoni pasien | Dikonfirmasi pengguna sebagai materi asli klinik | Pertahankan kutipan dan atribusi dari ekspor; foto disimpan lokal. |
@@ -49,11 +51,11 @@ Prioritaskan kejelasan, rasa percaya, dan kemudahan penggunaan di ponsel. Hindar
 
 ### Elemen yang diambil dari referensi
 
-- Hero fotografi besar dengan teks yang jelas.
-- Navigasi putih berbentuk pill yang melayang di atas hero.
+- Hero dengan judul editorial terpusat pada latar terang, diikuti foto perawatan besar di bawahnya.
+- Navigasi putih berbentuk pill yang melayang di bagian atas halaman.
 - Kombinasi huruf sans-serif modern dan aksen serif miring pada judul besar.
 - Ruang kosong yang lega dan pergantian latar putih serta biru pucat.
-- Kartu layanan dengan foto dan sudut membulat.
+- Kartu layanan bersudut membulat dengan teks yang mudah dipindai.
 
 ### Penyesuaian untuk SAMI
 
@@ -95,9 +97,9 @@ Nilai di bawah adalah titik awal untuk Stitch dan implementasi. Sesuaikan secara
 
 ### 5.2 Hero
 
-- Gunakan foto perawatan yang paling kuat secara komposisi. Jika foto tidak cocok untuk full-bleed, gunakan tata letak editorial dua kolom.
+- Letakkan judul, penjelasan singkat, dan dua tindakan di tengah; foto perawatan besar berada di bawah konten seperti pada referensi terbaru.
 - Foto harus tetap menampilkan konteks perawatan secara wajar; jangan memotong wajah/tindakan dengan canggung.
-- Gunakan gradien gelap lokal di belakang teks jika diperlukan untuk kontras.
+- Gunakan gradien lembut hanya di bagian bawah foto agar label kecil terbaca.
 - Contoh judul: **“Perawatan gigi yang terasa lebih nyaman.”**
 - Contoh subjudul: **“Kenali layanan dan tim dokter Klinik Utama SAMI di Sukabumi. Tanyakan jadwal kunjungan dengan mudah melalui WhatsApp.”**
 - CTA primer: **Tanya Jadwal via WhatsApp**. CTA sekunder: **Jelajahi Layanan**.
@@ -123,12 +125,12 @@ Kategori dari ekspor yang sudah dikonfirmasi pengguna:
 8. Perawatan gusi dan jaringan penyangga
 9. Perawatan gigi anak
 
-Tampilkan sebagai kartu modular berisi foto perawatan, nama layanan, penjelasan singkat dengan bahasa awam, dan tindakan **Tanyakan layanan**. Cocokkan foto dan isi tiap kategori dengan klinik sebelum rilis. Jangan menambahkan implan, rincian prosedur, harga, atau janji hasil hanya karena muncul pada gambar referensi desain.
+Tampilkan sebagai kartu modular berisi nama layanan dan penjelasan singkat dengan bahasa awam. CTA WhatsApp tersedia di titik utama halaman, bukan pada setiap kartu. Cocokkan isi tiap kategori dengan klinik sebelum rilis. Jangan menambahkan implan, rincian prosedur, harga, atau janji hasil hanya karena muncul pada gambar referensi desain.
 
 ### 5.5 Tim dokter
 
 - Tampilkan **empat dokter**: tiga kartu portrait dan satu profil dokter mitra, sesuai materi yang tersedia.
-- Setiap profil memiliki: foto portrait, nama lengkap, gelar dan bidang praktik yang terverifikasi, ringkasan latar belakang, serta tautan **Lihat profil & jadwal**.
+- Setiap profil memiliki: foto portrait bila tersedia, nama lengkap, gelar dan bidang praktik yang terverifikasi, ringkasan latar belakang, serta jadwal singkat. Penjelasan profil dapat dibuka tanpa tombol reservasi berulang.
 - Jika tiga foto tambahan yang berisi latar belakang dokter disertakan kemudian, gunakan sebagai **sumber informasi**. Informasi penting ditulis ulang sebagai teks asli website agar mudah dibaca, dicari, dan diakses; gambar berisi teks tidak menjadi satu-satunya cara membaca profil.
 - Jika detail pada foto tidak terbaca, tandai sebagai **[perlu konfirmasi klinik]** pada bahan kerja. Jangan menebak.
 - Pada mobile, kartu ditumpuk vertikal; hindari carousel yang menyembunyikan dokter lain.
@@ -136,9 +138,9 @@ Tampilkan sebagai kartu modular berisi foto perawatan, nama layanan, penjelasan 
 ### 5.6 Jadwal praktik dokter
 
 - Bedakan secara eksplisit **jam operasional klinik** dan **jadwal dokter**.
-- Untuk tiap dokter, tampilkan portrait kecil, nama, hari praktik, jam, dan catatan jika jadwal dapat berubah.
+- Kelompokkan sebelas jadwal berdasarkan enam hari praktik; tampilkan nama dokter dan jam dalam baris yang mudah dipindai. Brosur asli berada di samping pada desktop dan di bawah jadwal pada ponsel.
 - Jika detail belum tersedia dalam aset yang diberikan, tampilkan pada draft: **“Jadwal dikonfirmasi melalui WhatsApp.”**
-- CTA: **Konfirmasi jadwal dengan admin**.
+- Satu CTA di bagian atas jadwal: **Konfirmasi jadwal via WhatsApp**.
 - Desain mobile berupa daftar/kartu; jangan memakai tabel lebar yang memerlukan gulir horizontal.
 
 ### 5.7 Galeri perawatan

@@ -17,14 +17,14 @@ Buka alamat yang tercetak setelah `SAMI preview:` (biasanya `http://127.0.0.1:41
 - `index.html`: seluruh konten, empat dokter, sembilan layanan, sebelas sesi jadwal, foto, dan tautan. Satu dokumen untuk semua ukuran layar.
 - `styles.css`: styling tambahan dan aturan responsif.
 - `tailwind.config.cjs`: token tema dari ekspor, termasuk Plus Jakarta Sans dan Newsreader.
-- `scripts/site.js`: menu mobile, filter dokter/hari, dan pemuatan peta atas permintaan.
+- `scripts/site.js`: menu mobile dan pemuatan peta atas permintaan.
 - `assets/site.css`: hasil build CSS yang dipakai langsung oleh halaman; tidak membutuhkan Tailwind CDN saat dibuka.
 - `assets/images/`: foto dan brosur yang disimpan lokal dari ekspor.
 - `assets/sources.json`: asal URL gambar, untuk jejak sumber.
 - `reference/stitch-export.html`: ekspor asli sebelum perubahan, disimpan sebagai cadangan dan tidak disajikan server preview.
 - `design.md`: brief yang diperbarui berdasarkan konfirmasi pengguna.
 
-FAQ dan profil dokter menggunakan elemen HTML `details`, sehingga tetap bisa dibuka tanpa JavaScript. Filter jadwal hanya menyaring jadwal praktik; konfirmasi slot tetap melalui WhatsApp. Google Maps dimuat setelah tombol “Tampilkan peta” ditekan, dengan tautan lokasi eksternal tetap tersedia. Peta dan Google Fonts memerlukan jaringan.
+FAQ dan profil dokter menggunakan elemen HTML `details`, sehingga tetap bisa dibuka tanpa JavaScript. Jadwal mingguan dikelompokkan menurut hari; konfirmasi slot tetap melalui WhatsApp. Google Maps dimuat setelah tombol “Tampilkan peta” ditekan, dengan tautan lokasi eksternal tetap tersedia. Peta dan Google Fonts memerlukan jaringan.
 
 ## Verifikasi
 
@@ -32,7 +32,7 @@ FAQ dan profil dokter menggunakan elemen HTML `details`, sehingga tetap bisa dib
 npm test
 ```
 
-Pengujian Playwright menggunakan Microsoft Edge yang terpasang di Windows. Pengujian meliputi filter beserta hasil kosong dan reset, pesan WhatsApp sesuai dokter/hari, menu ponsel, FAQ melalui keyboard, tautan anchor, pemuatan gambar, reduced motion, dan overflow pada lebar 360, 390, 768, 1024, dan 1440 piksel. Tangkapan layar tersimpan di `test-results/`.
+Pengujian Playwright menggunakan Microsoft Edge yang terpasang di Windows. Pengujian meliputi sebelas entri jadwal dalam enam kelompok hari, jumlah CTA WhatsApp, menu ponsel, FAQ melalui keyboard, tautan anchor, pemuatan gambar, reduced motion, dan overflow pada lebar 360, 390, 768, 1024, dan 1440 piksel. Tangkapan layar tersimpan di `test-results/`.
 
 ## Catatan konten
 
@@ -45,7 +45,8 @@ URL logo dalam ekspor mengarah ke halaman login Google. Header, footer, dan favi
 - Menghapus duplikasi dua dokumen HTML dan konflik skrip desktop/mobile.
 - Mempertahankan konten yang dikonfirmasi pengguna; memperbarui brief dari tiga menjadi empat dokter dan dari lima menjadi sembilan layanan.
 - Mendekatkan hero ke referensi fotografi, merapikan navigasi pill, tipografi editorial, spacing, warna tombol, serta tampilan ponsel.
-- Menyatukan sebelas jadwal dalam satu sumber HTML dengan filter hari/dokter.
+- Menampilkan sebelas jadwal dalam enam kelompok hari bersama brosur asli.
+- Menata ulang hero dan jadwal mengikuti dua tangkapan referensi serta membatasi CTA WhatsApp utama pada header, hero, jadwal, dan penutup.
 - Mengganti gambar peta dengan akses Google Maps, memperbaiki alt text, fokus keyboard, disclosure FAQ/profil, dan target navigasi.
 - Memindahkan CSS serta interaksi ke file terpisah dan menyimpan aset lokal. Halaman tidak lagi memuat formulir duplikat yang meminta data pasien.
 

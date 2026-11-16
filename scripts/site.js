@@ -30,33 +30,6 @@ matchMedia("(min-width: 1200px)").addEventListener("change", (event) => {
   if (event.matches) closeMenu();
 });
 
-const filters = document.querySelector(".schedule-filters");
-const doctorSelect = document.querySelector("#schedule-doctor");
-const daySelect = document.querySelector("#schedule-day");
-const schedules = [...document.querySelectorAll(".schedule-card")];
-
-function filterSchedule() {
-  let visible = 0;
-  for (const card of schedules) {
-    const matchesDoctor =
-      doctorSelect.value === "all" ||
-      doctorSelect.value === card.dataset.doctor;
-    const matchesDay =
-      daySelect.value === "all" || daySelect.value === card.dataset.day;
-    card.hidden = !(matchesDoctor && matchesDay);
-    if (!card.hidden) visible++;
-  }
-  document.querySelector("#schedule-count").textContent =
-    `Menampilkan ${visible} jadwal praktik`;
-  document.querySelector("#schedule-empty").hidden = visible !== 0;
-}
-filters.addEventListener("change", filterSchedule);
-filters.addEventListener("submit", (event) => event.preventDefault());
-filters.addEventListener("reset", () => {
-  // Reset fires before the browser restores the select values.
-  requestAnimationFrame(filterSchedule);
-});
-
 const header = document.querySelector(".site-header");
 const sentinel = document.querySelector(".hero");
 new IntersectionObserver(
