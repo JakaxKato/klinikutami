@@ -20,9 +20,12 @@ Buka alamat yang tercetak setelah `SAMI preview:` (biasanya `http://127.0.0.1:41
 - `scripts/site.js`: menu mobile dan pemuatan peta atas permintaan.
 - `assets/site.css`: hasil build CSS yang dipakai langsung oleh halaman; tidak membutuhkan Tailwind CDN saat dibuka.
 - `assets/images/`: foto dan brosur yang disimpan lokal dari ekspor.
+- `assets/images/logo-sami.png`: logo resmi yang diberikan pengguna; dipakai di header, footer, dan favicon.
 - `assets/sources.json`: asal URL gambar, untuk jejak sumber.
 - `reference/stitch-export.html`: ekspor asli sebelum perubahan, disimpan sebagai cadangan dan tidak disajikan server preview.
 - `design.md`: brief yang diperbarui berdasarkan konfirmasi pengguna.
+- `vercel.json`: perintah build dan direktori hasil deploy untuk Vercel.
+- `scripts/prepare-vercel.cjs`: menyalin hanya halaman dan aset yang diperlukan ke `dist/`.
 
 FAQ dan profil dokter menggunakan elemen HTML `details`, sehingga tetap bisa dibuka tanpa JavaScript. Jadwal mingguan dikelompokkan menurut hari; konfirmasi slot tetap melalui WhatsApp. Google Maps dimuat setelah tombol “Tampilkan peta” ditekan, dengan tautan lokasi eksternal tetap tersedia. Peta dan Google Fonts memerlukan jaringan.
 
@@ -34,11 +37,34 @@ npm test
 
 Pengujian Playwright menggunakan Microsoft Edge yang terpasang di Windows. Pengujian meliputi sebelas entri jadwal dalam enam kelompok hari, jumlah CTA WhatsApp, menu ponsel, FAQ melalui keyboard, tautan anchor, pemuatan gambar, reduced motion, dan overflow pada lebar 360, 390, 768, 1024, dan 1440 piksel. Tangkapan layar tersimpan di `test-results/`.
 
+## Deploy ke Vercel lewat GitHub
+
+Proyek ini tidak memerlukan database atau variabel lingkungan. `vercel.json` sudah menentukan build `npm run build:vercel` dan Output Directory `dist`. Folder `dist/` dibuat saat build dan tidak perlu di-commit.
+
+1. Di PowerShell, simpan perubahan ke repo GitHub:
+
+   ```powershell
+   cd C:\Users\wijay\Documents\klinikutamasami
+   npm.cmd ci
+   npm.cmd run build:vercel
+   git add .
+   git commit -m "Siapkan deploy Vercel"
+   git push origin main
+   ```
+
+   Jika `git commit` mengatakan tidak ada perubahan, lanjutkan ke langkah berikutnya. Pastikan `npm.cmd run build:vercel` selesai tanpa error sebelum push.
+
+2. Masuk ke [dashboard Vercel](https://vercel.com/dashboard), pilih **Add New → Project**, hubungkan akun GitHub jika diminta, lalu **Import** repo `JakaxKato/klinikutami`.
+3. Di konfigurasi proyek, pilih **Framework Preset: Other** dan **Root Directory: `./`**. Periksa Build Command `npm run build:vercel` dan Output Directory `dist`; keduanya sudah berasal dari `vercel.json`. Biarkan Install Command pada pengaturan otomatis. Tidak perlu menambahkan Environment Variables.
+4. Klik **Deploy**. Setelah status **Ready**, buka URL `*.vercel.app` yang ditampilkan. Periksa hero, foto dokter, jadwal praktik, tautan WhatsApp, dan tampilan ponsel.
+
+Push berikutnya ke branch `main` akan membuat deploy produksi baru secara otomatis. Jika muncul 404, periksa **Build Logs** dan pastikan Output Directory tetap `dist` serta `dist/index.html` dibuat oleh build.
+
 ## Catatan konten
 
 Pengguna mengonfirmasi nama dokter, sembilan layanan, jadwal, foto, dan testimoni dalam ekspor sebagai materi asli klinik. Tiga portrait tersedia untuk drg. Lily, drg. Sammy, dan drg. Nenden; drg. Astriani ditampilkan sebagai dokter mitra tanpa portrait rekaan. Foto latar belakang pendidikan yang disebut dalam brief awal belum disertakan sebagai file terpisah; website memakai uraian fokus perawatan dari ekspor.
 
-URL logo dalam ekspor mengarah ke halaman login Google. Header, footer, dan favicon sementara memakai monogram teks “S”; ganti dengan file logo asli saat tersedia. Instagram mengikuti tangkapan akun yang diberikan pengguna: `klinikutamasami.id`.
+Logo resmi dari pengguna kini ditampilkan di header, footer, dan favicon. Instagram mengikuti tangkapan akun yang diberikan pengguna: `klinikutamasami.id`.
 
 ## Ringkasan perbaikan
 

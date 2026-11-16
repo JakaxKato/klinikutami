@@ -4,6 +4,7 @@
   "description": "Website Klinik Utama SAMI, Sukabumi",
   "scripts": {
     "build": "tailwindcss -i ./styles.css -o ./assets/site.css --minify",
+    "build:vercel": "npm run build && node scripts/prepare-vercel.cjs",
     "dev": "node scripts/serve.cjs",
     "format": "prettier --write index.html styles.css scripts/site.js tailwind.config.cjs",
     "test": "playwright test"

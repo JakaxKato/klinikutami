@@ -23,7 +23,7 @@
     />
     <meta name="theme-color" content="#142231" />
     <link rel="stylesheet" href="assets/site.css" />
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/images/logo-sami.png" type="image/png" />
     <script src="scripts/site.js" defer></script>
   </head>
   <body
@@ -38,7 +38,9 @@
         class="max-w-7xl mx-auto flex items-center justify-between bg-surface/90 backdrop-blur-xl border border-border-light rounded-full shadow-[0_16px_36px_-6px_rgba(20,34,49,0.08)] px-5 py-3 pointer-events-auto transition-all"
       >
         <a class="flex items-center gap-3 shrink-0 brand-lockup" href="#beranda"
-          ><span aria-hidden="true" class="brand-mark">S</span>
+          ><span aria-hidden="true" class="brand-logo"
+            ><img src="assets/images/logo-sami.png" alt="" width="177" height="182"
+          /></span>
           <div>
             <span
               class="font-title-card text-title-card text-ink tracking-tight block leading-tight font-bold"
@@ -970,16 +972,16 @@
                   Klinik Utama SAMI melayani kunjungan sesuai jadwal dokter.
                   Hubungi admin untuk memastikan ketersediaan sebelum datang.
                 </p>
+                <a
+                  class="button button-primary schedule-cta"
+                  href="https://wa.me/6281293461648?text=Halo%20Admin%20Klinik%20Utama%20SAMI%2C%20saya%20ingin%20menanyakan%20jadwal%20kunjungan."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><span class="material-symbols-outlined" aria-hidden="true"
+                    >calendar_month</span
+                  >Konfirmasi jadwal via WhatsApp</a
+                >
               </div>
-              <a
-                class="button button-primary schedule-cta"
-                href="https://wa.me/6281293461648?text=Halo%20Admin%20Klinik%20Utama%20SAMI%2C%20saya%20ingin%20menanyakan%20jadwal%20kunjungan."
-                target="_blank"
-                rel="noopener noreferrer"
-                ><span class="material-symbols-outlined" aria-hidden="true"
-                  >calendar_month</span
-                >Konfirmasi jadwal via WhatsApp</a
-              >
             </div>
             <div class="schedule-layout">
               <div class="weekly-schedule">
@@ -1785,7 +1787,14 @@
         >
           <div class="lg:col-span-5 space-y-space-md">
             <div class="flex items-center gap-3">
-              <span aria-hidden="true" class="brand-mark">S</span>
+              <span aria-hidden="true" class="brand-logo"
+                ><img
+                  src="assets/images/logo-sami.png"
+                  alt=""
+                  width="177"
+                  height="182"
+                  loading="lazy"
+              /></span>
               <div class="leading-tight">
                 <span
                   class="font-title-card text-title-card text-surface font-semibold tracking-tight block"

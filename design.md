@@ -9,7 +9,7 @@
 
 Pada tahap audit kode, pengguna mengonfirmasi data tambahan dalam ekspor: **empat dokter, sembilan layanan, jadwal praktik terperinci, serta foto dan testimoni asli klinik**. Keputusan ini memperbarui batas tiga dokter dan lima kategori layanan pada brief awal. Tiga dokter memiliki portrait; drg. Astriani Amanda, Sp.KG ditampilkan sebagai dokter mitra tanpa portrait rekaan.
 
-Implementasi mempertahankan Tailwind CSS 3, Plus Jakarta Sans, dan Newsreader dari ekspor. Desktop dan mobile memakai satu dokumen responsif. URL logo asli memerlukan login Google; monogram teks S digunakan sementara sampai file logo asli tersedia.
+Implementasi mempertahankan Tailwind CSS 3, Plus Jakarta Sans, dan Newsreader dari ekspor. Desktop dan mobile memakai satu dokumen responsif. Logo resmi yang diberikan pengguna dipakai di header, footer, dan favicon.
 
 ## 1. Prinsip produk
 
@@ -213,7 +213,7 @@ Desain dianggap siap diimplementasikan bila:
 
 ## 10. Materi yang perlu dikumpulkan sebelum konten final
 
-- Logo asli dalam kualitas baik dan panduan warna bila ada.
+- Logo resmi sudah tersedia; panduan warna merek dapat ditambahkan bila klinik memilikinya.
 - Tiga portrait dokter dan tiga foto latar belakang/profil dokter, dengan pasangan file yang jelas.
 - Pertahankan nama, gelar, dan jadwal dari ekspor yang sudah dikonfirmasi pengguna; perbarui bila klinik mengumumkan perubahan.
 - Foto perawatan sudah tersedia dari ekspor dan dikonfirmasi pengguna; tambahkan foto lain bila diperlukan.
