@@ -5,11 +5,13 @@
 **Tujuan utama:** Membantu calon pasien memahami layanan, mengenal dokter, melihat jadwal, dan menghubungi admin melalui WhatsApp.  
 **Rujukan visual:** Gambar referensi website dental yang diberikan pengguna; gunakan sebagai arah visual, bukan template untuk disalin.
 
+**Keputusan terbaru:** Pengguna memilih kembali desain sebelum reimagine. Pertahankan hero terpusat dengan foto di bawahnya, navigasi pill, kartu layanan, warna, dan susunan section dari versi tersebut. Pembaruan yang dipertahankan adalah animasi Motion dan foto Unsplash. Kredit sumber tidak ditampilkan pada halaman; catatan fotografer dan URL sumber disimpan di `assets/sources.json`.
+
 ## Keputusan terbaru dari pengguna
 
 Pada tahap audit kode, pengguna mengonfirmasi data tambahan dalam ekspor: **empat dokter, sembilan layanan, jadwal praktik terperinci, serta foto dan testimoni asli klinik**. Keputusan ini memperbarui batas tiga dokter dan lima kategori layanan pada brief awal. Tiga dokter memiliki portrait; drg. Astriani Amanda, Sp.KG ditampilkan sebagai dokter mitra tanpa portrait rekaan.
 
-Implementasi mempertahankan Tailwind CSS 3, Plus Jakarta Sans, dan Newsreader dari ekspor. Desktop dan mobile memakai satu dokumen responsif. Logo resmi yang diberikan pengguna dipakai di header, footer, dan favicon.
+Implementasi mempertahankan Tailwind CSS 3, Plus Jakarta Sans, dan Newsreader dari ekspor. Desktop dan mobile memakai satu dokumen responsif. Logo resmi yang diberikan pengguna dipakai di header, footer, dan favicon. Motion dipasang melalui npm dan dibundel lokal menggunakan esbuild. Font, logo, dan foto WebP disajikan dari aset lokal.
 
 ## 1. Prinsip produk
 
@@ -59,7 +61,7 @@ Prioritaskan kejelasan, rasa percaya, dan kemudahan penggunaan di ponsel. Hindar
 
 ### Penyesuaian untuk SAMI
 
-- Utamakan foto asli dokter dan tindakan yang disediakan pengguna.
+- Gunakan portrait dokter, logo, dan brosur asli yang disediakan pengguna. Foto hero dan empat galeri menggunakan Unsplash sesuai permintaan terbaru; copy galeri bersifat umum dan tidak mengklaim sebagai dokumentasi fasilitas SAMI.
 - Gunakan warna biru logo SAMI sebagai dasar, dengan saturasi yang lebih terkendali daripada desain unggahan promosi.
 - Buat halaman lebih ringkas daripada referensi. Bagian statistik besar, pricing, blog, dan newsletter tidak diperlukan untuk versi pertama.
 - Hindari ikon gigi berulang, foto stok dokter, testimoni rekaan, dan angka keberhasilan yang tidak didukung data.
@@ -145,7 +147,7 @@ Tampilkan sebagai kartu modular berisi nama layanan dan penjelasan singkat denga
 
 ### 5.7 Galeri perawatan
 
-- Susun foto perawatan asli menjadi grid editorial yang teratur, dengan variasi ukuran yang tetap rapi.
+- Susun empat foto Unsplash dengan grid dan variasi ukuran dari desain awal. Sumber disimpan sebagai metadata proyek, tanpa kredit sumber di tampilan halaman.
 - Beri caption hanya bila tindakan pada foto sudah jelas dan disetujui klinik.
 - Jangan membuat klaim sebelum/sesudah atau menampilkan identitas pasien tanpa persetujuan yang sesuai.
 
@@ -170,7 +172,7 @@ Gunakan accordion ringkas untuk pertanyaan logistik: cara membuat janji, kemungk
 - Rancang dan periksa paling tidak pada lebar sekitar **390px**, **768px**, dan **1440px**.
 - Desktop memakai grid fleksibel hingga 12 kolom; mobile memakai satu kolom dengan urutan konten yang masuk akal.
 - Tombol utama tetap mudah ditemukan di ponsel. Sticky WhatsApp boleh digunakan bila tidak menutupi konten atau kontrol lain.
-- Animasi: transisi halus sekitar 180–300ms untuk hover/focus; reveal section yang ringan dan tidak menghambat baca. Hindari parallax berat dan auto-playing carousel.
+- Animasi Motion: reveal konten sekali saat masuk viewport, progres scroll, pengantar hero ringan, transisi menu, dan perubahan tinggi FAQ/profil dokter. Durasi sekitar 160–480ms. Kartu layanan tetap statis dengan penjelasan langsung terbaca. Teks utama dan gambar hero terlihat tanpa menunggu animasi; tidak ada pengambilalihan scroll.
 - Hormati preferensi `prefers-reduced-motion`.
 - Pastikan kontras teks kuat, indikator fokus terlihat, area sentuh minimal sekitar 44px, teks alternatif foto bermakna, dan tidak ada overflow horizontal.
 - Optimalkan foto untuk web tanpa menghilangkan detail penting; siapkan ukuran yang sesuai desktop dan mobile.

@@ -34,5 +34,53 @@
   {
     "file": "assets/images/jadwal-praktik.png",
     "source": "https://lh3.googleusercontent.com/aida-public/AB6AXuDj77n5XIPoKj9lCsechYlcGeHiYVQ85NNCMeH35H0jgVVMkLswGeRimIX4wUokLYzimjwP_xTHnd099dkAWDnzEYBkl_4vWbPx9ipHVmqcfQGFTLszoIgUk1jvUP-LUPAdKU6uGgEIHODgaYg47H57z5ra06-C7lkyLtDfWWpBtd0GmXoL65Cskk7H3ee9WA1VDQOulHNSt1WpWDeb-f7LdcjQRF1aTInpfVpP2cARwVy5zbGVW7Wb"
+  },
+  {
+    "source": "https://unsplash.com/photos/a-dentist-examining-a-patient-GxctDhxhbxM",
+    "photographer": "Ozkan Guner",
+    "license": "https://unsplash.com/license",
+    "use": "Foto ilustrasi, bukan dokumentasi Klinik Utama SAMI",
+    "file": "assets/images/hero-unsplash.webp",
+    "download_url": "https://images.unsplash.com/photo-1662837625427-970713d74aa6?w=960&h=1000&fit=crop&crop=faces&fm=webp&q=78"
+  },
+  {
+    "source": "https://unsplash.com/photos/a-dentist-examining-a-patient-GxctDhxhbxM",
+    "photographer": "Ozkan Guner",
+    "license": "https://unsplash.com/license",
+    "use": "Foto ilustrasi, bukan dokumentasi Klinik Utama SAMI",
+    "file": "assets/images/hero-unsplash-mobile.webp",
+    "download_url": "https://images.unsplash.com/photo-1662837625427-970713d74aa6?w=480&h=500&fit=crop&crop=faces&fm=webp&q=76"
+  },
+  {
+    "file": "assets/images/galeri-ruang-unsplash.webp",
+    "source": "https://unsplash.com/photos/white-and-blue-hospital-bed-LQ698TTvGpA",
+    "photographer": "Benyamin Bohlouli",
+    "license": "https://unsplash.com/license",
+    "use": "Foto ilustrasi, bukan dokumentasi Klinik Utama SAMI",
+    "download_url": "https://images.unsplash.com/photo-1629909615184-74f495363b67?w=800&h=600&fit=crop&fm=webp&q=78"
+  },
+  {
+    "file": "assets/images/galeri-tunggu-unsplash.webp",
+    "source": "https://unsplash.com/photos/blue-couch-beside-green-potted-plant-B_sK_xgzwVA",
+    "photographer": "Benyamin Bohlouli",
+    "license": "https://unsplash.com/license",
+    "use": "Foto ilustrasi, bukan dokumentasi Klinik Utama SAMI",
+    "download_url": "https://images.unsplash.com/photo-1629909614456-6b1c5c94cecc?w=800&h=600&fit=crop&fm=webp&q=78"
+  },
+  {
+    "file": "assets/images/galeri-perawatan-unsplash.webp",
+    "source": "https://unsplash.com/photos/dental-exam-with-mirror-and-tool-8BkF0sTC6Uo",
+    "photographer": "Caroline LM",
+    "license": "https://unsplash.com/license",
+    "use": "Foto ilustrasi, bukan dokumentasi Klinik Utama SAMI",
+    "download_url": "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&h=600&fit=crop&fm=webp&q=78"
+  },
+  {
+    "file": "assets/images/galeri-konsultasi-unsplash.webp",
+    "source": "https://unsplash.com/photos/a-dentist-examining-a-patient-c5W7w6cFV88",
+    "photographer": "Erfan Amiri",
+    "license": "https://unsplash.com/license",
+    "use": "Foto ilustrasi, bukan dokumentasi Klinik Utama SAMI",
+    "download_url": "https://images.unsplash.com/photo-1662543701887-91f8f042a338?w=800&h=600&fit=crop&fm=webp&q=78"
   }
 ]

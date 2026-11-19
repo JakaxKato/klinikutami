@@ -10,7 +10,7 @@ npm run build
 npm run dev
 ```
 
-Buka alamat yang tercetak setelah `SAMI preview:` (biasanya `http://127.0.0.1:4173`). Jika port 4173 sedang dipakai, server otomatis mencoba port berikutnya hingga 4178. Muat ulang browser setelah mengedit. Jalankan kembali `npm run build` bila HTML, kelas Tailwind, konfigurasi tema, atau CSS berubah.
+Buka alamat yang tercetak setelah `SAMI preview:` (biasanya `http://127.0.0.1:4173`). Jika port 4173 sedang dipakai, server otomatis mencoba port berikutnya hingga 4178. Muat ulang browser setelah mengedit. Jalankan kembali `npm run build` bila HTML, kelas Tailwind, konfigurasi tema, CSS, atau JavaScript berubah. `npm run dev` membuat ulang bundle JavaScript sebelum menjalankan server.
 
 ## File utama
 
@@ -18,10 +18,13 @@ Buka alamat yang tercetak setelah `SAMI preview:` (biasanya `http://127.0.0.1:41
 - `styles.css`: styling tambahan dan aturan responsif.
 - `tailwind.config.cjs`: token tema dari ekspor, termasuk Plus Jakarta Sans dan Newsreader.
 - `scripts/site.js`: menu mobile dan pemuatan peta atas permintaan.
+- `scripts/motion.js`: animasi Motion untuk reveal konten saat scroll, indikator progres scroll, menu mobile, FAQ, dan profil dokter. Mengikuti preferensi reduced motion dan menjaga konten tetap terbaca tanpa JavaScript.
+- `scripts/build-js.cjs`: esbuild membundel kode dan Motion menjadi `assets/site.js`; lisensi disertakan di `assets/motion-licenses.txt`.
 - `assets/site.css`: hasil build CSS yang dipakai langsung oleh halaman; tidak membutuhkan Tailwind CDN saat dibuka.
-- `assets/images/`: foto dan brosur yang disimpan lokal dari ekspor.
+- `assets/images/`: logo, portrait dokter, brosur, dan foto Unsplash yang disimpan lokal.
 - `assets/images/logo-sami.png`: logo resmi asli dari pengguna; digunakan sebagai favicon.
-- `assets/images/logo-sami.webp` dan `assets/images/hero-perawatan.webp`: versi ringan untuk tampilan halaman.
+- `assets/images/logo-sami.webp`: logo ringan untuk tampilan halaman.
+- `assets/images/hero-unsplash*.webp` dan `assets/images/galeri-*-unsplash.webp`: foto hero dan empat galeri dari Unsplash. Hero mobile menggunakan versi 480px melalui elemen `picture`.
 - `assets/fonts/`: tiga font WOFF2 lokal untuk teks editorial, teks utama, dan 29 ikon yang digunakan. Asal file tercatat di `sources.json`; lisensinya ada di `licenses/fonts/`.
 - `assets/sources.json`: asal URL gambar, untuk jejak sumber.
 - `reference/stitch-export.html`: ekspor asli sebelum perubahan, disimpan sebagai cadangan dan tidak disajikan server preview.
@@ -40,6 +43,8 @@ npm test
 ```
 
 Pengujian Playwright menggunakan Microsoft Edge yang terpasang di Windows. Pengujian meliputi sebelas entri jadwal dalam enam kelompok hari, jumlah CTA WhatsApp, menu ponsel, FAQ melalui keyboard, tautan anchor, pemuatan gambar, reduced motion, dan overflow pada lebar 360, 390, 768, 1024, dan 1440 piksel. Tangkapan layar tersimpan di `test-results/`.
+
+Tes tambahan memeriksa lebar 320px, sembilan kartu layanan statis, tidak adanya kredit Unsplash pada halaman, perubahan reduced motion saat runtime, interaksi cepat berulang, profil dokter melalui keyboard, dan konten tanpa JavaScript.
 
 ## Deploy ke Vercel lewat GitHub
 
@@ -69,6 +74,8 @@ Push berikutnya ke branch `main` akan membuat deploy produksi baru secara otomat
 Pengguna mengonfirmasi nama dokter, sembilan layanan, jadwal, foto, dan testimoni dalam ekspor sebagai materi asli klinik. Tiga portrait tersedia untuk drg. Lily, drg. Sammy, dan drg. Nenden; drg. Astriani ditampilkan sebagai dokter mitra tanpa portrait rekaan. Foto latar belakang pendidikan yang disebut dalam brief awal belum disertakan sebagai file terpisah; website memakai uraian fokus perawatan dari ekspor.
 
 Logo resmi dari pengguna kini ditampilkan di header, footer, dan favicon. Instagram mengikuti tangkapan akun yang diberikan pengguna: `klinikutamasami.id`.
+
+Sesuai keputusan terbaru pengguna, tampilan sebelum reimagine dipulihkan: hero terpusat dengan foto di bawahnya, navigasi pill, kartu layanan, palet biru, dan susunan section lama. Animasi Motion serta foto hero/galeri Unsplash dipertahankan. Kredit dan sumber foto hanya dicatat di `assets/sources.json`, tanpa ditampilkan pada halaman pasien. Foto Unsplash bukan dokumentasi fasilitas atau tim Klinik SAMI.
 
 ## Ringkasan perbaikan
 

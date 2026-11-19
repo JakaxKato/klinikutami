@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html class="scroll-smooth" lang="id">
   <head>
     <meta charset="utf-8" />
@@ -13,7 +12,7 @@
     <meta name="theme-color" content="#142231" />
     <link rel="stylesheet" href="assets/site.css" />
     <link rel="icon" href="assets/images/logo-sami.png" type="image/png" />
-    <script src="scripts/site.js" defer></script>
+    <script src="assets/site.js" defer></script>
   </head>
   <body
     id="beranda"
@@ -28,7 +27,11 @@
       >
         <a class="flex items-center gap-3 shrink-0 brand-lockup" href="#beranda"
           ><span aria-hidden="true" class="brand-logo"
-            ><img src="assets/images/logo-sami.webp" alt="" width="120" height="123"
+            ><img
+              src="assets/images/logo-sami.webp"
+              alt=""
+              width="120"
+              height="123"
           /></span>
           <div>
             <span
@@ -74,7 +77,7 @@
         </nav>
         <div class="flex items-center gap-3 header-actions">
           <a
-            class="inline-flex items-center gap-2 bg-brand-primary hover:bg-brand-hover text-on-primary font-label-button text-label-button px-5 py-2.5 rounded-full transition-all shadow-[0_4px_16px_rgba(8,117,209,0.25)] hover:shadow-[0_6px_20px_rgba(8,117,209,0.35)] -translate-y-0 hover:-translate-y-0.5"
+            class="inline-flex items-center gap-2 bg-brand-primary hover:bg-brand-hover text-on-primary font-label-button text-label-button px-5 py-2.5 rounded-full transition-all shadow-[0_4px_16px_rgba(8,117,209,0.25)] hover:shadow-[0_6px_20px_rgba(8,117,209,0.35)] -translate-y-0 hover:-translate-y-0.5 header-contact"
             href="https://wa.me/6281293461648?text=Halo%20Admin%20Klinik%20Utama%20SAMI%2C%20saya%20ingin%20tanya%20jadwal%20dan%20layanan"
             aria-label="Tanya jadwal melalui WhatsApp"
             rel="noopener noreferrer"
@@ -98,6 +101,7 @@
             >
           </button>
         </div>
+        <div class="scroll-progress" aria-hidden="true"></div>
       </div>
       <nav
         id="mobile-menu"
@@ -144,14 +148,18 @@
               >Jl. Gudang No.23, Kebonjati, Kota Sukabumi</a
             >
             <div class="hero-visual">
-              <img
-                class="hero-image"
-                src="assets/images/hero-perawatan.webp"
-                alt="Dokter mendampingi pasien saat pemeriksaan gigi"
-                fetchpriority="high"
-                width="512"
-                height="279"
-              />
+              <picture class="hero-picture"
+                ><source
+                  media="(max-width: 767px)"
+                  srcset="assets/images/hero-unsplash-mobile.webp" />
+                <img
+                  class="hero-image"
+                  src="assets/images/hero-unsplash.webp"
+                  width="960"
+                  height="1000"
+                  fetchpriority="high"
+                  alt="Dokter mendampingi pasien saat pemeriksaan gigi"
+              /></picture>
               <div class="hero-visual-shade"></div>
               <div class="hero-photo-note">
                 <span class="material-symbols-outlined" aria-hidden="true"
@@ -183,7 +191,7 @@
             <div
               class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center"
             >
-              <div class="lg:col-span-7 space-y-space-md">
+              <div data-motion-reveal="" class="lg:col-span-7 space-y-space-md">
                 <div
                   class="inline-flex items-center gap-2 text-brand-primary font-label-caps text-label-caps uppercase tracking-widest"
                 >
@@ -349,7 +357,7 @@
             <div
               class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-6"
             >
-              <div class="max-w-2xl space-y-space-xs">
+              <div data-motion-reveal="" class="max-w-2xl space-y-space-xs">
                 <span
                   class="font-label-caps text-label-caps text-brand-primary uppercase tracking-widest block"
                   >Perawatan Gigi Lengkap SAMI</span
@@ -669,6 +677,7 @@
             class="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop"
           >
             <div
+              data-motion-reveal=""
               class="text-center max-w-2xl mx-auto mb-space-xl space-y-space-xs"
             >
               <span
@@ -1171,91 +1180,99 @@
             class="max-w-7xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop"
           >
             <div
+              data-motion-reveal=""
               class="text-center max-w-2xl mx-auto mb-space-xl space-y-space-xs"
             >
               <span
                 class="font-label-caps text-label-caps text-brand-primary uppercase tracking-widest block"
-                >Fasilitas Nyaman</span
+                >Ruang &amp; Perawatan</span
               >
               <h2
                 class="font-headline-section text-headline-section-mobile md:text-headline-section text-ink font-bold"
               >
-                Kenyamanan Ruang &amp;
+                Mengenal ruang &amp;
                 <span
                   class="font-headline-accent italic font-normal text-brand-primary"
-                  >Kualitas Perawatan</span
+                  >perawatan gigi.</span
                 >
               </h2>
               <p class="font-body-md text-body-md text-muted">
-                Suasana klinik yang tenang, steril, dan bebas rasa tegang untuk
-                memberi Anda dan keluarga pengalaman berkunjung yang
-                menyenangkan.
+                Sekilas dunia perawatan gigi, dari ruang tunggu hingga
+                pemeriksaan bersama dokter.
               </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
               <div
-                class="md:col-span-7 h-72 md:h-96 rounded-3xl overflow-hidden shadow-sm relative group"
+                class="md:col-span-7 h-72 md:h-96 rounded-3xl overflow-hidden shadow-sm relative group gallery-item"
               >
                 <img
+                  height="600"
+                  width="800"
                   loading="lazy"
                   decoding="async"
-                  alt="Ruang perawatan gigi Klinik Utama SAMI"
+                  alt="Ruang perawatan gigi"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  src="assets/images/ruang-perawatan.jpg"
+                  src="assets/images/galeri-ruang-unsplash.webp"
                 />
                 <div
                   class="absolute bottom-4 left-4 bg-surface/90 backdrop-blur-md px-4 py-2 rounded-xl text-xs font-semibold text-ink"
                 >
-                  Dental Unit Modern &amp; Ergonomis
+                  Ruang perawatan gigi
                 </div>
               </div>
               <div
-                class="md:col-span-5 h-72 md:h-96 rounded-3xl overflow-hidden shadow-sm relative group"
+                class="md:col-span-5 h-72 md:h-96 rounded-3xl overflow-hidden shadow-sm relative group gallery-item"
               >
                 <img
+                  height="600"
+                  width="800"
                   loading="lazy"
                   decoding="async"
-                  alt="Ruang tunggu Klinik Utama SAMI"
+                  alt="Ruang tunggu dengan tempat duduk"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  src="assets/images/ruang-tunggu.jpg"
+                  src="assets/images/galeri-tunggu-unsplash.webp"
                 />
                 <div
                   class="absolute bottom-4 left-4 bg-surface/90 backdrop-blur-md px-4 py-2 rounded-xl text-xs font-semibold text-ink"
                 >
-                  Ruang Tunggu Santai &amp; Tenang
+                  Suasana ruang tunggu
                 </div>
               </div>
               <div
-                class="md:col-span-5 h-72 md:h-80 rounded-3xl overflow-hidden shadow-sm relative group"
+                class="md:col-span-5 h-72 md:h-80 rounded-3xl overflow-hidden shadow-sm relative group gallery-item"
               >
                 <img
+                  height="600"
+                  width="800"
                   loading="lazy"
                   decoding="async"
-                  alt="Peralatan sterilisasi klinik"
+                  alt="Pemeriksaan gigi dengan cermin dental"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  src="assets/images/sterilisasi.jpg"
+                  src="assets/images/galeri-perawatan-unsplash.webp"
                 />
                 <div
                   class="absolute bottom-4 left-4 bg-surface/90 backdrop-blur-md px-4 py-2 rounded-xl text-xs font-semibold text-ink"
                 >
-                  Sterilisasi Autoclave Standar Medis
+                  Pemeriksaan gigi
                 </div>
               </div>
               <div
-                class="md:col-span-7 h-72 md:h-80 rounded-3xl overflow-hidden shadow-sm relative group"
+                class="md:col-span-7 h-72 md:h-80 rounded-3xl overflow-hidden shadow-sm relative group gallery-item"
               >
                 <img
+                  height="600"
+                  width="800"
                   loading="lazy"
                   decoding="async"
-                  alt="Konsultasi dokter dengan pasien"
+                  alt="Dokter melakukan perawatan gigi pada pasien"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  src="assets/images/konsultasi.jpg"
+                  src="assets/images/galeri-konsultasi-unsplash.webp"
                 />
                 <div
                   class="absolute bottom-4 left-4 bg-surface/90 backdrop-blur-md px-4 py-2 rounded-xl text-xs font-semibold text-ink"
                 >
-                  Konsultasi Edukatif &amp; Transparan
+                  Perawatan bersama dokter
                 </div>
               </div>
             </div>
@@ -1272,7 +1289,7 @@
             <div
               class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-6"
             >
-              <div class="max-w-2xl space-y-space-xs">
+              <div data-motion-reveal="" class="max-w-2xl space-y-space-xs">
                 <span
                   class="font-label-caps text-label-caps text-brand-primary uppercase tracking-widest block"
                   >Ulasan Nyata Pasien</span
@@ -1315,6 +1332,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop">
               <div
+                data-motion-reveal=""
                 class="bg-surface rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between border border-border-light/60"
               >
                 <div>
@@ -1385,6 +1403,7 @@
               </div>
 
               <div
+                data-motion-reveal=""
                 class="bg-surface rounded-3xl p-8 shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between border border-border-light/60"
               >
                 <div>
@@ -1464,7 +1483,10 @@
           <div
             class="max-w-4xl mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop"
           >
-            <div class="text-center mb-space-xl space-y-space-xs">
+            <div
+              data-motion-reveal=""
+              class="text-center mb-space-xl space-y-space-xs"
+            >
               <span
                 class="font-label-caps text-label-caps text-brand-primary uppercase tracking-widest block"
                 >Informasi Pasien</span
@@ -1580,6 +1602,7 @@
               class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-stretch"
             >
               <div
+                data-motion-reveal=""
                 class="lg:col-span-5 bg-surface rounded-3xl p-8 shadow-sm flex flex-col justify-between space-y-6 border border-border-light"
               >
                 <div class="space-y-space-md">

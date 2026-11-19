@@ -1,21 +1,36 @@
+import { reducedMotion, setupMotion, transitionMenu } from "./motion.js";
+
 const menuButton = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector("#mobile-menu");
+let menuOpen = false;
 
-function closeMenu(returnFocus = false) {
-  mobileMenu.hidden = true;
-  menuButton.setAttribute("aria-expanded", "false");
-  menuButton.setAttribute("aria-label", "Buka menu navigasi");
-  if (returnFocus) menuButton.focus();
+function setMenu(open, returnFocus = false, instant = false) {
+  menuOpen = open;
+  if (open) mobileMenu.hidden = false;
+  mobileMenu.inert = !open;
+  menuButton.setAttribute("aria-expanded", String(open));
+  menuButton.setAttribute(
+    "aria-label",
+    open ? "Tutup menu navigasi" : "Buka menu navigasi",
+  );
+  if (returnFocus || (!open && mobileMenu.contains(document.activeElement)))
+    menuButton.focus();
+  transitionMenu(
+    mobileMenu,
+    open,
+    () => {
+      mobileMenu.hidden = !menuOpen;
+    },
+    instant,
+  );
+}
+
+function closeMenu(returnFocus = false, instant = false) {
+  if (menuOpen || !mobileMenu.hidden) setMenu(false, returnFocus, instant);
 }
 
 menuButton.addEventListener("click", () => {
-  const open = menuButton.getAttribute("aria-expanded") === "true";
-  mobileMenu.hidden = open;
-  menuButton.setAttribute("aria-expanded", String(!open));
-  menuButton.setAttribute(
-    "aria-label",
-    open ? "Buka menu navigasi" : "Tutup menu navigasi",
-  );
+  setMenu(!menuOpen);
 });
 mobileMenu.addEventListener("click", (event) => {
   if (event.target.closest("a")) closeMenu();
@@ -27,7 +42,10 @@ document.addEventListener("click", (event) => {
   if (!mobileMenu.hidden && !event.target.closest(".site-header")) closeMenu();
 });
 matchMedia("(min-width: 1200px)").addEventListener("change", (event) => {
-  if (event.matches) closeMenu();
+  if (event.matches) closeMenu(false, true);
+});
+reducedMotion.addEventListener("change", () => {
+  if (reducedMotion.matches) setMenu(menuOpen, false, true);
 });
 
 const header = document.querySelector(".site-header");
@@ -61,3 +79,5 @@ loadMap.addEventListener("click", () => {
   );
   frame.src = frame.dataset.src;
 });
+
+setupMotion();
